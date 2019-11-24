@@ -197,8 +197,43 @@ class Contacted extends CI_Controller{
 					$data['status']         = FALSE;
 			}
 
+			/**
+			 * created_at: 2019-11-24
+			 * created_by: Afes Oktavianus
+			 * add validation for input customer
+			 */
 
+			if (empty($this->input->post('nm_perusahaan'))) {
+				$error                  = 'Nama Perusahaan tidak boleh kosong';
+				$data['inputerror'][]   = 'nm_perusahaan';
+				$data['notiferror'][]   = $prefix.$error.$suffix;
+				$data['error_string'][] = $error;
+				$data['status']         = FALSE;	
+			}
 
+			if (empty($this->input->post('alamat_perusahaan'))) {
+				$error                  = 'Alamat Perusahaan tidak boleh kosong';
+				$data['inputerror'][]   = 'alamat_perusaan';
+				$data['notiferror'][]   = $prefix.$error.$suffix;
+				$data['error_string'][] = $error;
+				$data['status']         = FALSE;	
+			}
+
+			if (empty($this->input->post('agen'))) {
+				$error                  = 'Nama Agen tidak boleh kosong';
+				$data['inputerror'][]   = 'agen';
+				$data['notiferror'][]   = $prefix.$error.$suffix;
+				$data['error_string'][] = $error;
+				$data['status']         = FALSE;	
+			}
+
+			if (empty($this->input->post('kota_customer'))) {
+				$error                  = 'Kota Customer tidak boleh kosong';
+				$data['inputerror'][]   = 'kota_customer';
+				$data['notiferror'][]   = $prefix.$error.$suffix;
+				$data['error_string'][] = $error;
+				$data['status']         = FALSE;	
+			}
 		if($data['status'] === FALSE)
 		{
 			echo json_encode($data);
