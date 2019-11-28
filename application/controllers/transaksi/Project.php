@@ -247,6 +247,7 @@ class Project extends CI_Controller{
 				$row[] = '<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown"
 															aria-haspopup="true" aria-expanded="false" disabled><i class="ft-menu" ></i></button>
 															<div class="dropdown-menu">
+                                                                                                                                <a class="dropdown-item" ><i class="ft-file"></i>Document</a>
 																<a class="dropdown-item" ><i class="ft-edit"></i>Update</a>
 																<a class="dropdown-item" "><i class="ft-trash"></i>Delete</a>
 															</div>';
@@ -254,7 +255,8 @@ class Project extends CI_Controller{
 				$row[] = '<button type="button" class="btn btn-dark dropdown-toggle btn-sm" data-toggle="dropdown"
 															aria-haspopup="true" aria-expanded="false"><i class="ft-menu"></i></button>
 															<div class="dropdown-menu">
-																<a class="dropdown-item"  href="javascript:void(0)" onclick="edit_person('."'".$d->id_project."'".')"><i class="ft-edit"></i>Update</a>
+                                                                                                                                <a class="dropdown-item" href="javascript:void(0)" onclick="edit_person('."'".$d->id_project."'".')"><i class="ft-file"></i>Document</a>
+																<a class="dropdown-item" href="javascript:void(0)" onclick="edit_person('."'".$d->id_project."'".')"><i class="ft-edit"></i>Update</a>
 																<a class="dropdown-item" href="javascript:void(0)" onclick="delete_person('."'".$d->id_project."'".')"><i class="ft-trash"></i>Delete</a>
 															</div>';
 			}
