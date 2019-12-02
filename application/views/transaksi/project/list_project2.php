@@ -346,6 +346,38 @@ function edit_person(id)
     });
 }
 
+function edit_keterangan(id)
+{
+    save_method = 'update';
+    $('#form')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+
+
+
+    //Ajax Load data from ajax
+    $.ajax({
+        url : "<?php echo site_url('transaksi/project/ajax_edit_project')?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('[name="id"]').val(data.id_project);
+            $('[name="id_project"]').val(data.id_project);
+            $('[name="id_customer"]').val(data.id_customer);
+            $('[name="id_layanan"]').val(data.id_layanan);
+            $('[name="harga_jual"]').val(data.harga_jual);
+            $('[name="keterangan"]').val(data.keterangan);
+            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Edit Keterangan Document'); // Set title to Bootstrap modal title
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+}
+
 
 function reload_table()
 {

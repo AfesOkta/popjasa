@@ -247,7 +247,7 @@ class Project extends CI_Controller{
 				$row[] = '<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown"
 															aria-haspopup="true" aria-expanded="false" disabled><i class="ft-menu" ></i></button>
 															<div class="dropdown-menu">
-                                                                                                                                <a class="dropdown-item" ><i class="ft-file"></i>Document</a>
+                                                                <a class="dropdown-item" ><i class="ft-file"></i>Document</a>
 																<a class="dropdown-item" ><i class="ft-edit"></i>Update</a>
 																<a class="dropdown-item" "><i class="ft-trash"></i>Delete</a>
 															</div>';
@@ -255,7 +255,7 @@ class Project extends CI_Controller{
 				$row[] = '<button type="button" class="btn btn-dark dropdown-toggle btn-sm" data-toggle="dropdown"
 															aria-haspopup="true" aria-expanded="false"><i class="ft-menu"></i></button>
 															<div class="dropdown-menu">
-                                                                                                                                <a class="dropdown-item" href="javascript:void(0)" onclick="edit_person('."'".$d->id_project."'".')"><i class="ft-file"></i>Document</a>
+                                                                <a class="dropdown-item" href="javascript:void(0)" onclick="edit_keterangan('."'".$d->id_project."'".')"><i class="ft-file"></i>Document</a>
 																<a class="dropdown-item" href="javascript:void(0)" onclick="edit_person('."'".$d->id_project."'".')"><i class="ft-edit"></i>Update</a>
 																<a class="dropdown-item" href="javascript:void(0)" onclick="delete_person('."'".$d->id_project."'".')"><i class="ft-trash"></i>Delete</a>
 															</div>';
@@ -348,6 +348,16 @@ class Project extends CI_Controller{
 		echo json_encode($data);
 	}
 
+	/**
+	 * created_at: 2019-12-03
+	 * created_by: Afes Oktavianus
+	 * function for showing modal form edit keterangan
+	 */
+	public function ajax_edit_project_keterangan($id)
+	{
+		$data = $this->M_project->get_by_id($id);
+		echo json_encode($data);
+	}
 	public function ajax_update_project()
 	{
 		//$this->_validate();
@@ -408,7 +418,22 @@ class Project extends CI_Controller{
 		echo json_encode(array("status" => TRUE));
 	}
 
+	/**
+	 * created_at:2019-12-01
+	 * created_by:Afes Oktavianus
+	 * function show page entry keterangan project's
+	 */
+	public function open_project_keterangan($id) {
 
+	}
 
+	/**
+	 * created_at:2019-12-01
+	 * created_by:Afes Oktavianus
+	 * function save page entry keterangan project's
+	 * and next page to all options
+	 */
+	public function add_project_keterangan($id) {
 
+	}
 }
